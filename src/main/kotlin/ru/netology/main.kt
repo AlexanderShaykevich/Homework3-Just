@@ -1,15 +1,15 @@
 package ru.netology
 
 fun main() {
-    agoToText(50, "Alexander")
-    agoToText(3120, "Anastasia")
-    agoToText(40600, "John")
-    agoToText(90000, "Anna")
-    agoToText(173000, "Bob")
-    agoToText(260000, "Boris")
+    println(agoToText(50, "Alexander"))
+    println(agoToText(3120, "Anastasia"))
+    println(agoToText(40600, "John"))
+    println(agoToText(90000, "Anna"))
+    println(agoToText(173000, "Bob"))
+    println(agoToText(260000, "Boris"))
 }
 
-fun agoToText(time: Int, name: String) {
+fun agoToText(time: Int, name: String):String {
     val display = when (time) {
         in 0..60 -> "$name был(a) только что"
         in 61..60 * 60 -> "$name был(a) ${time / 60} ${minutesDisplay(time)}"
@@ -18,7 +18,7 @@ fun agoToText(time: Int, name: String) {
         in 48 * 60 * 60 + 1..72 * 60 * 60 -> "$name был(a) вчера"
         else -> "$name был(а) давно"
     }
-    return println(display)
+    return display
 }
 
 fun minutesDisplay(time: Int): String {

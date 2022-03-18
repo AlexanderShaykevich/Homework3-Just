@@ -10,7 +10,7 @@ fun main() {
 }
 
 fun agoToText(time: Int, name: String):String {
-    val display = when (time) {
+    return when (time) {
         in 0..60 -> "$name был(a) только что"
         in 61..60 * 60 -> "$name был(a) ${time / 60} ${minutesDisplay(time)}"
         in 60 * 60 + 1..24 * 60 * 60 -> "$name был(a) ${time / 3600} ${hoursDisplay(time)}"
@@ -18,7 +18,6 @@ fun agoToText(time: Int, name: String):String {
         in 48 * 60 * 60 + 1..72 * 60 * 60 -> "$name был(a) вчера"
         else -> "$name был(а) давно"
     }
-    return display
 }
 
 fun minutesDisplay(time: Int): String {
